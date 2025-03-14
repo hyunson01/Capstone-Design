@@ -4,9 +4,10 @@ def camera_open():
     cap = cv2.VideoCapture(0)
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
+    fps = cap.get(cv2.CAP_PROP_FPS)
     if not cap.isOpened():
         raise Exception("Error: Cannot open camera.")
-    return cap
+    return cap, fps
 
 def camera_frame(cap):
     ret, frame = cap.read()

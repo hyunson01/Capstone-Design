@@ -12,8 +12,8 @@ dist_coeffs = np.array([
 ])
 
 # 보드 크기 (cm 단위)
-board_width_cm = 25.7
-board_height_cm = 18.2
+board_width_cm = 21
+board_height_cm = 21
 
 # 3D 상자 정의
 tag_size = 0.04  # 태그 크기 (단위: 미터)
@@ -26,8 +26,12 @@ object_points = np.array([
 tag_info = {}
 detected_ids = set()
 
-
 # 격자 배열 생성
-grid_array = np.zeros((12, 12), dtype=int)
+grid_array = [np.zeros((12, 12), dtype=int)]
+
 grid_width = 600
 grid_height = int(grid_width * board_height_cm / board_width_cm)
+cell_size = 50
+
+# 트래커 관련련
+tracker_dict={}

@@ -52,7 +52,7 @@ def perspective_transform(frame, rect, board_width_px, board_height_px):
     warped_board_width_px = int(np.linalg.norm(dst[1] - dst[0]))  # (top_right - top_left)
     warped_board_height_px = int(np.linalg.norm(dst[3] - dst[0])) # (bottom_left - top_left)
     
-    warped_resized = cv2.resize(warped, (frame.shape[1] // 2, frame.shape[0] // 2))
+    warped_resized = cv2.resize(warped, (frame.shape[1] // 2, frame.shape[1] // 2))
     
     return warped, warped_board_width_px, warped_board_height_px, warped_resized
 
